@@ -7,9 +7,9 @@ Check [license](License.md), for licensing details.
 
 ----------------------
 ## Todo list (I think)
-- [ ] Add more comments :sweat_smile:.
-- [ ] Tweak options :wrench:.
-- [ ] Add software installation :raising_hand:.
-- [ ] Add system software installation :laptop:.
-- [ ] Interactivity.
+- [ ] Add more comments :sweat_smile:
+- [ ] Tweak options :wrench:
+- [ ] Add software installation :raising_hand:
+- [ ] Add system software installation :satellite:
+- [ ] Interactivity :computer:
 
