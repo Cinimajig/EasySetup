@@ -5,8 +5,9 @@ alias edit = ^notepad
 
 def prompt [] {
     let path_segment = ($env.PWD)
+    let esc = (char -u "1b")
 
-    $path_segment
+    $"($esc)[33;1m($path_segment)($esc)[m"
 }
 
 def get_date_time [] {
