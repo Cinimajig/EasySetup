@@ -1,0 +1,35 @@
+window:
+  startup_mode: Windowed
+
+  dimensions:
+    columns: 130
+    lines: 35
+
+  padding:
+    x: 12
+    y: 4
+
+  dynamic_padding: true
+  opacity: 0.97
+
+colors:
+  primary:
+    background: '#01307c'
+    foreground: '#eeeeee'
+
+cursor:
+  style:
+    shape: Underline
+    blinking: On
+
+font:
+  normal:
+    family: "Cascadia Mono"
+  size: 12.0
+
+debug:
+  # Keep the log file after quitting Alacritty.
+  persistent_logging: false
+
+shell:
+  program: nu.exe
