@@ -7,3 +7,4 @@ Either run `Setup.ps1` here to run everything in here or in the individual folde
 | Console_Colors | Default Comhost colors and font. |
 | Bin_Path | Sets up a `%USERPROFILE%\bin` folder and adds it to path. |
 | VBS_Magic | Few helper scripts related to Windows Script Host. |
+| Alacritty | Profile for the Alacritty terminal. |
