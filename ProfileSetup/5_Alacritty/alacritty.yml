@@ -14,7 +14,7 @@ window:
 
 colors:
   primary:
-    background: '#01307c'
+    background: '#012456'
     foreground: '#eeeeee'
 
 cursor:
