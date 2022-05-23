@@ -22,21 +22,17 @@ foreach($Link in $Content.ParsedHtml.links) {
     }
 }
 
-$Versions | Sort-Object Major,Minor,Build -Descending | ForEach-Object {
+foreach($Version in ($Versions | Sort-Object Major,Minor,Build -Descending)) {
     $BitsError = $null
-    $Major, $Minor, $Build = $_.Major, $_.Minor, $_.Build
+    $Major, $Minor, $Build = $Version.Major, $Version.Minor, $Version.Build
     $DownloadLink = "https://www.python.org/ftp/python/$Major.$Minor.$Build/python-$Major.$Minor.$Build-$Arc.exe"
 
     Start-BitsTransfer $DownloadLink -Destination $env:TEMP -ErrorVariable BitsError -ErrorAction SilentlyContinue
 
     if (-not $BitsError) {
         break
-    }
-    
+    }   
 }
-
-# Safty wait.
-Start-Sleep -Seconds 1
 
 Start-Process "$env:TEMP\python-$Major.$Minor.$Build-$Arc.exe" -ArgumentList "/passive", "InstallAllUsers=$AllUsers", "InstallLauncherAllUsers=$AllUsers", "CompileAll=$CompileStdLib", "PrependPath=$AddToPath" -Wait
 
