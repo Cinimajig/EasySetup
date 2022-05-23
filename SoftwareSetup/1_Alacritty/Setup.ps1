@@ -7,7 +7,7 @@ if (-not (Test-Path "$env:APPDATA\alacritty\alacritty.yml")) {
     New-Item "$env:APPDATA\alacritty" -Force -ItemType Directory
 }
 
-Copy-Item -Path "$PSScriptRoot\alacritty.yml" -Destination "$env:APPDATA\alacritty" -Force
+# Copy-Item -Path "$PSScriptRoot\alacritty.yml" -Destination "$env:APPDATA\alacritty" -Force
 
 $Links = (Invoke-WebRequest https://github.com/alacritty/alacritty/releases/latest).Links
 $DownloadLink = ($Links | Where-Object href -like "/alacritty/alacritty/releases/download*installer.msi").href
