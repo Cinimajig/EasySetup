@@ -23,7 +23,10 @@ $Destination = "$env:LOCALAPPDATA\EasySetup\alacritty_install.msi"
 $DestinationConfig = "$env:APPDATA\alacritty\alacritty.yml")
 
 Start-BitsTransfer -Source $Source -Destination $Destination -Confirm:$false
-Start-BitsTransfer -Source $SourceConfig -Destination $DestinationConfig -Confirm:$false
+
+if (-not (Test-Path "$env:APPDATA\alacritty\alacritty.yml")) {
+    Start-BitsTransfer -Source $SourceConfig -Destination $DestinationConfig -Confirm:$false
+}
 
 if ($Credential.UserName -eq "S-1-5-32-544") {
     Start-Process -FilePath msiexec -ArgumentList "/i", $Destination, "/passive" -Wait -Verb RunAs
