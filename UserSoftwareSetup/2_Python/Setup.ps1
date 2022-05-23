@@ -2,6 +2,7 @@ $Arc = 'amd64'
 
 $AllUsers = 0
 $AddToPath = 1
+$CompileStdLib = 1
 
 $Url = 'https://python.org/ftp/python'
 $Content = Invoke-WebRequest -Uri $Url
@@ -34,5 +35,8 @@ $Versions | Sort-Object Major,Minor,Build -Descending | ForEach-Object {
     
 }
 
-Start-Process "$env:TEMP\python-$Major.$Minor.$Build-$Arc.exe" -ArgumentList "/passive", "InstallAllUsers=$AllUsers", "InstallLauncherAllUsers=$AllUsers", "PrependPath=$AddToPath" -Wait
+# Safty wait.
+Start-Sleep -Seconds 1
+
+Start-Process "$env:TEMP\python-$Major.$Minor.$Build-$Arc.exe" -ArgumentList "/passive", "InstallAllUsers=$AllUsers", "InstallLauncherAllUsers=$AllUsers", "CompileAll=$CompileStdLib", "PrependPath=$AddToPath" -Wait
 
