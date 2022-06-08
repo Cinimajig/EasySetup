@@ -20,7 +20,7 @@ if (-not (Test-Path "$env:LOCALAPPDATA\EasySetup")) {
 $Source = "https://github.com$DownloadLink"
 $SourceConfig = "https://github.com$DownloadLink"
 $Destination = "$env:LOCALAPPDATA\EasySetup\alacritty_install.msi"
-$DestinationConfig = "$env:APPDATA\alacritty\alacritty.yml")
+$DestinationConfig = "$env:APPDATA\alacritty\alacritty.yml"
 
 Start-BitsTransfer -Source $Source -Destination $Destination -Confirm:$false
 
