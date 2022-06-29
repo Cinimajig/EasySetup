@@ -34,5 +34,5 @@ foreach($Version in ($Versions | Sort-Object Major,Minor,Build -Descending)) {
     }   
 }
 
-Start-Process "$env:TEMP\python-$Major.$Minor.$Build-$Arc.exe" -ArgumentList "/quiet", "InstallAllUsers=$AllUsers", "InstallLauncherAllUsers=$AllUsers", "CompileAll=$CompileStdLib", "PrependPath=$AddToPath" -Wait
+Start-Process "$env:TEMP\python-$Major.$Minor.$Build-$Arc.exe" -ArgumentList "/quiet", "Include_launcher=1", "InstallAllUsers=$AllUsers", "InstallLauncherAllUsers=$AllUsers", "CompileAll=$CompileStdLib", "PrependPath=$AddToPath" -Wait
 
